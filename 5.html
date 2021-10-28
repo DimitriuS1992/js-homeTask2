@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+    const a = parseFloat(prompt("Введите a: "));
+    const b = parseFloat(prompt("Введите b: "));
+    const operation = prompt("Выберите одну из операций: +, -, *, /");
+
+    /**
+     * Функция складывает два вводимых пользователем числа.
+     * @param {*} a первое вводимое число пользователем.
+     * @param {*} b второе вводимое число пользователем.
+     * @returns результат словения вводимых чисел a и b.
+     */
+    function getPlusOperation(a, b) {
+      return a + b;
+    }
+
+    /**
+     * Функция вычитает из вводимого числа a число b.
+     * @param {*} a первое вводимое число пользователем.
+     * @param {*} b второе вводимое число пользователем.
+     * @returns выводит результат вычитания a-b.
+     */
+    function getMinusOperation(a, b) {
+      return a - b;
+    }
+
+    /**
+     * Функция умножает два вводимых пользователем числа a и b.
+     * @param {*} a первое вводимое число пользователем.
+     * @param {*} b второе вводимое число пользователем.
+     * @returns выводит результат умножения a*b.
+     */
+    function getMultiplicationOperation(a, b) {
+      return a * b;
+    }
+
+    /**
+     * Функция делит вводимые пользователем числа a на b.
+     * @param {*} a первое вводимое число пользователем.
+     * @param {*} b второе вводимое число пользователем.
+     * @returns выводит результат деления a/b.
+     */
+    function getDivisionOperation(a, b) {
+      return a / b;
+    }
+
+    /**
+    * Функция в зависимости от вводимого символа арифметической операции вызывает результат выполнения функции с этим
+    знаком.
+    * @param {*} a первое вводимое число пользователем.
+    * @param {*} b второе вводимое число пользователем.
+    * @param {*} operation знак арифметической операции.
+    * @returns вывод результата функции арифметической опералии.
+    */
+    function mathOperation(a, b, operation) {
+      if (operation === "+") {
+        return getPlusOperation(a, b);
+      } else if (operation === "-") {
+        return getMinusOperation(a, b);
+      } else if (operation === "*") {
+        return getMultiplicationOperation(a, b);
+      } else if (operation === "/") {
+        return getDivisionOperation(a, b);
+      } else
+        console.log("Выбрана некорректная операция");
+    }
+
+    console.log(mathOperation(a, b, operation));
+  </script>
+</body>
+
+</html>
